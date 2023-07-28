@@ -18,13 +18,16 @@ def createMenu():
 
     cap = cv2.VideoCapture(0)
 
-    menu_size = 120  # Tamanho do menu reduzido
-    menu_x, menu_y = 20, 480 - menu_size - 20  # Coordenadas do canto inferior esquerdo reduzidas
+    menu_size = 80  # Tamanho do menu ainda mais reduzido
+    menu_x, menu_y = 20, 480 - menu_size - 20  # Coordenadas do canto inferior esquerdo ainda mais reduzidas
 
-    deadliftTlx, deadliftTly = menu_x, menu_y - menu_size - 10
-    deadliftBrx, deadliftBry = menu_x + menu_size, menu_y - 10
-    squatTlx, squatTly = menu_x, menu_y - 2 * menu_size - 20
-    squatBrx, squatBry = menu_x + menu_size, menu_y - menu_size - 20
+    deadliftTlx, deadliftTly = menu_x, menu_y - menu_size - 5
+    deadliftBrx, deadliftBry = menu_x + menu_size, menu_y - 5
+    squatTlx, squatTly = menu_x, menu_y - 2 * menu_size - 10
+    squatBrx, squatBry = menu_x + menu_size, menu_y - menu_size - 10
+
+    # Restante do código permanece inalterado
+
 
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while cap.isOpened():
